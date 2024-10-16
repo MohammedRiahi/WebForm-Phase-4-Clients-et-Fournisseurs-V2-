@@ -1,0 +1,314 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_ExtractionFagClient_FAGL003H" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1124,2195" sap2010:WorkflowViewState.IdRef="Test_ExtractionFagClient_FAGL003H_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test_ExtractionFagClient_FAGL003H" sap:VirtualizedContainerService.HintSize="1044,2130" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="IN_str_FullPath_FichierParametre" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPath_FichierSuiviExecution" />
+      <Variable x:TypeArguments="x:String" Name="str_MotifExceptionRencontree" />
+      <Variable x:TypeArguments="x:Boolean" Name="bool_FlagExceptionRencontree" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPath_RepertoireExtractionFAGL003H_Approprie" />
+      <Variable x:TypeArguments="x:String" Name="str_NomOngletSocietes_DuFichierParametre" />
+      <Variable x:TypeArguments="x:String" Name="str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre" />
+      <Variable x:TypeArguments="x:String" Name="str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour" />
+      <Variable x:TypeArguments="x:String" Name="str_VarianteFAGL003H" />
+      <Variable x:TypeArguments="x:String" Name="str_NomColonneAvecLesSocietes_DuFichierParametreOngletSocietes" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolFlagFaireTraitementFAGLL03H" />
+      <Variable x:TypeArguments="x:String" Name="str_VarianteClient" />
+      <Variable x:TypeArguments="x:String" Name="str_varianteFournisseur" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap2010:Annotation.AnnotationText="/WEBFORM FRS&#xA;Cas Fournisseurs" DisplayName="str_varianteFournisseur" sap:VirtualizedContainerService.HintSize="1002,102" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_varianteFournisseur]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">/WEBFORM FRS</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap2010:Annotation.AnnotationText="/WEBFORM CL2&#xA;Cas Client" DisplayName="str_str_VarianteClient" sap:VirtualizedContainerService.HintSize="1002,102" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_VarianteClient]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">/WEBFORM CL2</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Sequence DisplayName="Choix variante à tester" sap:VirtualizedContainerService.HintSize="1002,152" sap2010:WorkflowViewState.IdRef="Sequence_11">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Choix test :str_VarianteFAGL003H" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_VarianteFAGL003H]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[str_VarianteClient]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <Sequence DisplayName="Socle commun" sap:VirtualizedContainerService.HintSize="1002,352" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="IN_str_FullPath_FichierParametre" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[IN_str_FullPath_FichierParametre]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["C:\Users\admophubu\Documents\DevUi\DataTest\WebFormTestFournisseur\Paramètres.xlsx"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="str_NomOngletSocietes_DuFichierParametre" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_NomOngletSocietes_DuFichierParametre]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Sociétés</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="str_NomColonneAvecLesSocietes_DuFichierParametreOngletSocietes" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_NomColonneAvecLesSocietes_DuFichierParametreOngletSocietes]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Société</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <If Condition="[str_VarianteFAGL003H =&quot;/WEBFORM CL2&quot;]" DisplayName="If VarianteFAGL003H" sap:VirtualizedContainerService.HintSize="1002,768" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Client" sap:VirtualizedContainerService.HintSize="304,452" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_FullPath_RepertoireExtractionFAGL003H_Approprie" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_FullPath_RepertoireExtractionFAGL003H_Approprie]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">C:\Users\admophubu\Servier Monde\RPA Webforms Clients Fournisseurs - DEV - REC - Documents\EXTRACTIONS\CLIENTS\FAGL003H</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">FAG-Client-Restrictions</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Restrictions</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="boolFlagFaireTraitementFAGLL03H" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[boolFlagFaireTraitementFAGLL03H]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <If Condition="[str_VarianteFAGL003H =&quot;/WEBFORM FRS&quot;]" DisplayName="If VarianteFAGL003H" sap:VirtualizedContainerService.HintSize="653,610" sap2010:WorkflowViewState.IdRef="If_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence DisplayName="Fournisseurs" sap:VirtualizedContainerService.HintSize="304,452" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="str_FullPath_RepertoireExtractionFAGL003H_Approprie" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_FullPath_RepertoireExtractionFAGL003H_Approprie]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">C:\Users\admophubu\Servier Monde\RPA Webforms Clients Fournisseurs - DEV - REC - Documents\EXTRACTIONS\FOURNISSEURS\FAGL003H</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">FAG-Four-Restrictions</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">Restriction</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="boolFlagFaireTraitementFAGLL03H" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[boolFlagFaireTraitementFAGLL03H]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="boolFlagFaireTraitementFAGLL03H" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[boolFlagFaireTraitementFAGLL03H]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </If.Else>
+        </If>
+      </If.Else>
+    </If>
+    <If Condition="[boolFlagFaireTraitementFAGLL03H]" DisplayName="If traitement FAGLL03H" sap:VirtualizedContainerService.HintSize="1002,362" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence DisplayName="Oui" sap:VirtualizedContainerService.HintSize="421,204" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke 3.ExtractionFagClientOuFournisseurs_FAGL003H_VarianteEnArg workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Utils\3.ExtractionFagClientOuFournisseurs_FAGL003H_VarianteEnArg.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPath_FichierParametre">[IN_str_FullPath_FichierParametre]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPath_FichierSuiviExecution">[str_FullPath_FichierSuiviExecution]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="Arg_OUT_str_MotifExceptionRencontree">[str_MotifExceptionRencontree]</OutArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="Arg_OUT_bool_FlagExceptionRencontree">[bool_FlagExceptionRencontree]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPath_RepertoireExtractionFAGL003H_Approprie">[str_FullPath_RepertoireExtractionFAGL003H_Approprie]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomOngletSocietes_DuFichierParametre">[str_NomOngletSocietes_DuFichierParametre]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre">[str_NomOngletDesComptesFAGL003H_Approprie_DuFichierParametre]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour">[str_NomColonneAvecLesComptesFAG_DuFichierParametreDansOngletClientOuFour]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_VarianteFAGL003H">[str_VarianteFAGL003H]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomColonneAvecLesSocietes_DuFichierParametreOngletSocietes">[str_NomColonneAvecLesSocietes_DuFichierParametreOngletSocietes]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Pas de TraitementFAGLL03H demandé&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

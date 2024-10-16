@@ -1,0 +1,486 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_ActivitésSAP" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="624,707" sap2010:WorkflowViewState.IdRef="Test_ActivitésSAP_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="42">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Test_ActivitésSAP" sap:VirtualizedContainerService.HintSize="634,642" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Name="Str_ReturnText" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,89.52 370,89.52</av:PointCollection>
+        <x:Double x:Key="Height">605.5</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID6</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">80,174.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">180,225.5 180,255.5 290,255.5 290,364.02 220,364.02 220,394.02</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ucas:Logon Window="{x:Null}" ConnectionName="PROD SERVIER - SP1" DelayBetweenRetries="500" DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Logon_1" Retries="5" SAPLogonPath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ucas:Logon>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">120,394.02</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">320,419.52 430,419.52 430,454.02</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ucas:Login Client="{x:Null}" Language="{x:Null}" Password="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" Window="{x:Null}" DisplayName="SAP Login" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Login_1" IsSecure="True" MultiLogonOptionToChoose="Single" Timeout="5000">
+            <ucas:Login.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="332dde68-d65b-4c18-9b7c-94b440d385e2">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ucas:Login.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ucas:Login>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">330,454.02</av:Point>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">430,505.02 430,535.02 380,535.02 380,554.5</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button Fin'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Retour">
+                <ucas:ClickToolbarButton.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                    <x:String>Retour</x:String>
+                    <x:String>Details</x:String>
+                    <x:String>Afficher\/masquer panneau latér</x:String>
+                    <x:String>Analyse desc. avec ligne actue</x:String>
+                    <x:String>Rafraîchir sélection actuelle</x:String>
+                    <x:String>Sauveg. mise en forme...</x:String>
+                    <x:String>Modifier mise en forme...</x:String>
+                    <x:String>Trier par ordre croissant</x:String>
+                    <x:String>Tri décroissant</x:String>
+                    <x:String>Rech. ...</x:String>
+                    <x:String>Activer filtre...</x:String>
+                    <x:String>Activer filtre.../Activer filtre...</x:String>
+                    <x:String>Activer filtre.../Suppr. filtres</x:String>
+                    <x:String>Total</x:String>
+                    <x:String>Total/Total</x:String>
+                    <x:String>Total/Valeur moyenne</x:String>
+                    <x:String>Total/Minimum</x:String>
+                    <x:String>Total/Maximum</x:String>
+                    <x:String>Sous-totaux</x:String>
+                    <x:String>Sous-totaux/Sous-totaux</x:String>
+                    <x:String>Sous-totaux/Niveau de totalisation</x:String>
+                    <x:String>Fonctions supplémentaires</x:String>
+                    <x:String>Afficher la pièce</x:String>
+                    <x:String>Afficher la pièce/Afficher la pièce</x:String>
+                    <x:String>Afficher la pièce/Afficher pièce d'origine</x:String>
+                    <x:String>Afficher la pièce/Afficher pièces comptables</x:String>
+                    <x:String>Afficher la pièce/Afficher la pièce ds nouvelle fenêtre...</x:String>
+                    <x:String>Afficher la pièce/Afficher la pièce d'origine...</x:String>
+                    <x:String>Afficher la pièce/Afficher les pièces comptables...</x:String>
+                    <x:String>Appeler état des postes indivi</x:String>
+                    <x:String>Appeler état des postes indivi/Appeler état des postes individuels</x:String>
+                    <x:String>Appeler état des postes indivi/Appeler état...</x:String>
+                  </scg:List>
+                </ucas:ClickToolbarButton.Items>
+                <ucas:ClickToolbarButton.Target>
+                  <ui:Target Element="{x:Null}" Id="630ad5f8-4d96-448f-908c-798962e01bd3" InformativeScreenshot="910af88899c54d11c4e1a340352712c3" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Navigateur Postes individuels grand livre (vue du grand livre)' /&gt;&lt;sap id='shellcont/shell' /&gt;">
+                    <ui:Target.ClippingRegion>
+                      <ui:Region Rectangle="536, 6, 14, 12" />
+                    </ui:Target.ClippingRegion>
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:ClickToolbarButton.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:ClickToolbarButton>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">280,554.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" MessageType="{x:Null}" DisplayName="Read Status Bar 'Statusbar Transaction'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[Str_ReturnText]">
+                    <ucas:ReadStatusbar.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="029da505-5e46-4ac9-bfb3-704b1139ee6e" InformativeScreenshot="09f5b7ff43aa5456e07f5d4b4590f4bb" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;&lt;sap id='sbar' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:ReadStatusbar.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ucas:ReadStatusbar>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">60,284.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ucas:ClickPictureOnScreen ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Picture on Screen 'Button  Suite (Entrée)'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ClickPictureOnScreen_1" KeyModifiers="None">
+        <ucas:ClickPictureOnScreen.PictureOffsetX>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ucas:ClickPictureOnScreen.PictureOffsetX>
+        <ucas:ClickPictureOnScreen.PictureOffsetY>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ucas:ClickPictureOnScreen.PictureOffsetY>
+        <ucas:ClickPictureOnScreen.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2f1a3128-1115-4147-9544-e18732abd51f" InformativeScreenshot="cc27b56a12dae3c0458010fa1e55ac84" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;&lt;sap id='tbar[0]/btn[15]' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ucas:ClickPictureOnScreen.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ucas:ClickPictureOnScreen>
+    </FlowStep>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">60,494.02</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:CellScope ColumnName="{x:Null}" ColumnNames="{x:Null}" RowNumber="{x:Null}" TableRow="{x:Null}" UiElement="{x:Null}" DisplayName="Table Cell Scope" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="CellScope_1">
+        <ui:CellScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Sequence>
+          </ActivityAction>
+        </ui:CellScope.Body>
+        <ui:CellScope.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c5925a7a-0c6a-4613-94fa-55faf0aa0c71">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ui:CellScope.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CellScope>
+    </FlowStep>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <FlowStep x:Name="__ReferenceID5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">350,134.02</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">450,185.02 450,224.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DelayAfter="800" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Fonctions supplémentaires">
+        <ucas:SelectMenuItem.Items>
+          <scg:List x:TypeArguments="x:String" Capacity="32">
+            <x:String>Retour</x:String>
+            <x:String>Details</x:String>
+            <x:String>Afficher\/masquer panneau latér</x:String>
+            <x:String>Analyse desc. avec ligne actue</x:String>
+            <x:String>Rafraîchir sélection actuelle</x:String>
+            <x:String>Sauveg. mise en forme...</x:String>
+            <x:String>Modifier mise en forme...</x:String>
+            <x:String>Trier par ordre croissant</x:String>
+            <x:String>Tri décroissant</x:String>
+            <x:String>Rech. ...</x:String>
+            <x:String>Activer filtre...</x:String>
+            <x:String>Activer filtre.../Activer filtre...</x:String>
+            <x:String>Activer filtre.../Suppr. filtres</x:String>
+            <x:String>Total</x:String>
+            <x:String>Total/Total</x:String>
+            <x:String>Total/Valeur moyenne</x:String>
+            <x:String>Total/Minimum</x:String>
+            <x:String>Total/Maximum</x:String>
+            <x:String>Sous-totaux</x:String>
+            <x:String>Sous-totaux/Sous-totaux</x:String>
+            <x:String>Sous-totaux/Niveau de totalisation</x:String>
+            <x:String>Fonctions supplémentaires</x:String>
+            <x:String>Afficher la pièce</x:String>
+            <x:String>Afficher la pièce/Afficher la pièce</x:String>
+            <x:String>Afficher la pièce/Afficher pièce d'origine</x:String>
+            <x:String>Afficher la pièce/Afficher pièces comptables</x:String>
+            <x:String>Afficher la pièce/Afficher la pièce ds nouvelle fenêtre...</x:String>
+            <x:String>Afficher la pièce/Afficher la pièce d'origine...</x:String>
+            <x:String>Afficher la pièce/Afficher les pièces comptables...</x:String>
+            <x:String>Appeler état des postes indivi</x:String>
+            <x:String>Appeler état des postes indivi/Appeler état des postes individuels</x:String>
+            <x:String>Appeler état des postes indivi/Appeler état...</x:String>
+          </scg:List>
+        </ucas:SelectMenuItem.Items>
+        <ucas:SelectMenuItem.Target>
+          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="20770ee4-87b0-4e0f-8aa6-4a4111d47635" InformativeScreenshot="d23b61b46278e17259259f548072335c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Navigateur Postes individuels grand livre (vue du grand livre)' /&gt;&lt;sap id='shellcont/shell' /&gt;">
+            <ui:Target.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:Target.TimeoutMS>
+            <ui:Target.WaitForReady>
+              <InArgument x:TypeArguments="ui:WaitForReady" />
+            </ui:Target.WaitForReady>
+          </ui:Target>
+        </ucas:SelectMenuItem.Target>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ucas:SelectMenuItem>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">350,224.5</av:Point>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">450,275.5 450,314.5</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SelectMenuItem_2" Item="Exporter/Calcul avec tableur">
+            <ucas:SelectMenuItem.Items>
+              <scg:List x:TypeArguments="x:String" Capacity="64">
+                <x:String>Retour</x:String>
+                <x:String>Details</x:String>
+                <x:String>Afficher\/masquer panneau latér</x:String>
+                <x:String>Analyse desc. avec ligne actue</x:String>
+                <x:String>Rafraîchir sélection actuelle</x:String>
+                <x:String>Sauveg. mise en forme...</x:String>
+                <x:String>Modifier mise en forme...</x:String>
+                <x:String>Trier par ordre croissant</x:String>
+                <x:String>Tri décroissant</x:String>
+                <x:String>Rech. ...</x:String>
+                <x:String>Activer filtre...</x:String>
+                <x:String>Activer filtre.../Activer filtre...</x:String>
+                <x:String>Activer filtre.../Suppr. filtres</x:String>
+                <x:String>Total</x:String>
+                <x:String>Total/Total</x:String>
+                <x:String>Total/Valeur moyenne</x:String>
+                <x:String>Total/Minimum</x:String>
+                <x:String>Total/Maximum</x:String>
+                <x:String>Sous-totaux</x:String>
+                <x:String>Sous-totaux/Sous-totaux</x:String>
+                <x:String>Sous-totaux/Niveau de totalisation</x:String>
+                <x:String>Imprim.</x:String>
+                <x:String>Affichages/Edition liste</x:String>
+                <x:String>Affichages/Grille</x:String>
+                <x:String>Affichages/Excel intégré</x:String>
+                <x:String>Exporter/Calcul avec tableur</x:String>
+                <x:String>Exporter/Traitement de texte</x:String>
+                <x:String>Exporter/Fichier local</x:String>
+                <x:String>Exporter/Envoyer</x:String>
+                <x:String>Exporter/Archive Business Workplace</x:String>
+                <x:String>Exporter/Analyse ABC</x:String>
+                <x:String>Exporter/Télédécharg. HTML</x:String>
+                <x:String>Noms techniques</x:String>
+                <x:String>Documentation pour navigateur</x:String>
+                <x:String>Fonctions minimales</x:String>
+                <x:String>Afficher la pièce</x:String>
+                <x:String>Afficher la pièce/Afficher la pièce</x:String>
+                <x:String>Afficher la pièce/Afficher pièce d'origine</x:String>
+                <x:String>Afficher la pièce/Afficher pièces comptables</x:String>
+                <x:String>Afficher la pièce/Afficher la pièce ds nouvelle fenêtre...</x:String>
+                <x:String>Afficher la pièce/Afficher la pièce d'origine...</x:String>
+                <x:String>Afficher la pièce/Afficher les pièces comptables...</x:String>
+                <x:String>Appeler état des postes indivi</x:String>
+                <x:String>Appeler état des postes indivi/Appeler état des postes individuels</x:String>
+                <x:String>Appeler état des postes indivi/Appeler état...</x:String>
+              </scg:List>
+            </ucas:SelectMenuItem.Items>
+            <ucas:SelectMenuItem.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="20770ee4-87b0-4e0f-8aa6-4a4111d47635" InformativeScreenshot="e27dae0c10a2393465e50c87e97d7352" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Navigateur Postes individuels grand livre (vue du grand livre)' /&gt;&lt;sap id='shellcont/shell' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ucas:SelectMenuItem.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ucas:SelectMenuItem>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">350,314.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,82</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="SelectMenuItem_3" Item="Excel (au format XSLX Office 2007)">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="8">
+                    <x:String>Microsoft Excel (au format XXL habituel)</x:String>
+                    <x:String>Excel (au format XSLX Office 2007)</x:String>
+                    <x:String>Excel (format MHTML)</x:String>
+                    <x:String>Excel (format MHTML pour 2000/97)</x:String>
+                    <x:String>OpenOffice (au format OpenDocument 2.0)</x:String>
+                    <x:String>Excel (format XML Office 2003)</x:String>
+                    <x:String>Excel (format XML Office 2003)</x:String>
+                    <x:String xml:space="preserve"> </x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="20770ee4-87b0-4e0f-8aa6-4a4111d47635" InformativeScreenshot="6006093046978e8bd56967f6742998d7" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Sélection du calcul avec tableur' idx='*' /&gt;&lt;sap id='usr/cmbG_LISTBOX' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ucas:SelectMenuItem>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <FlowStep x:Name="__ReferenceID6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">370,64.02</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">470,115.02 450,115.02 450,134.02</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Debut test connexion 28/11&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID5</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+  </Flowchart>
+</Activity>

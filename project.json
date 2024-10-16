@@ -1,0 +1,66 @@
+{
+  "name": "FIN_WEBFORMS_CLIENTS_FOURNISSEURS",
+  "description": "Extraction des balances âgées fournisseurs et clients, et de deux rapports HFM. ",
+  "main": "Main_FIN_WEBFORMS_CLIENTS_FOURNISSEURS.xaml",
+  "dependencies": {
+    "RPA_SERVIER_LIBRARY": "[1.0.3]",
+    "UiPath.Excel.Activities": "2.17.0-preview",
+    "UiPath.Mail.Activities": "[1.12.3]",
+    "UiPath.MicrosoftOffice365.Activities": "[1.9.0]",
+    "UiPath.System.Activities": "[22.10.5]",
+    "UiPath.UIAutomation.Activities": "22.10.4"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.10.5.0",
+  "projectVersion": "1.0.25",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "b4bd61ec-e058-4621-9166-17f6234f1cb0",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Main_FIN_WEBFORMS_CLIENTS_FOURNISSEURS.xaml",
+      "uniqueId": "d249488e-5dcd-4b4c-9f2a-dec6b257d18b",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

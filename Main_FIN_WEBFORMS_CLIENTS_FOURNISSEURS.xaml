@@ -1,0 +1,761 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="951,2358" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="29">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main_FIN_WEBFORMS_CLIENTS_FOURNISSEURS" sap:VirtualizedContainerService.HintSize="839,2173" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="str_NomProcess" />
+      <Variable x:TypeArguments="x:Boolean" Name="bollExceptionRencontreeCallProcess" />
+      <Variable x:TypeArguments="x:Int32" Name="int_SavingParExtraction" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireRootCompletAvecUserProfil_Documents" />
+      <Variable x:TypeArguments="x:String" Name="str_UserSAP" />
+      <Variable x:TypeArguments="ss:SecureString" Name="secureStr_PwdSAP" />
+      <Variable x:TypeArguments="x:String" Name="str_NomEnvironnementSurSapLogon_ASelectionner" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireUserProfil" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPathFichierParametre" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPathFichierReferentielEmail" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPathFichierTemplate_CreationRapportClient" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPathFichierWebform_CreationRapportSupplier" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPathFichierSuiviExecution" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireMetier" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionClientBalance" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionClientFAGL003H" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionFournisseurBalance" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionFournisseurFAGL003H" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionLFB1" />
+      <Variable x:TypeArguments="x:String" Name="str_EmailsCC_SeparateurPointVirguleSiPlusDUn" />
+      <Variable x:TypeArguments="x:String" Name="str_MotifException" />
+      <Variable x:TypeArguments="x:String" Default="&lt;/body&gt;&lt;/html&gt;" Name="CONST_HTML_END" />
+      <Variable x:TypeArguments="x:String" Default="&lt;html&gt;&lt;head&gt;&lt;style type='text/css'&gt;body { font-family: Helvetica, Geneva, sans-serif; font-size:14px; }&lt;/style&gt;&lt;/head&gt;&lt;body&gt;" Name="CONST_HTML_START" />
+      <Variable x:TypeArguments="x:String" Name="str_Mail_BAL_TEAM_RPA" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireArchive" />
+      <Variable x:TypeArguments="x:String" Name="str_EmailsTo_SeparateurPointVirguleSiPlusDUn" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireParametre" />
+      <Variable x:TypeArguments="x:String" Name="strLienRepMetierSurSharepointOnline" />
+      <Variable x:TypeArguments="x:String" Name="strNumSocietePourChoixTemplateV2" />
+      <Variable x:TypeArguments="x:String" Name="str_FullPathFichierTemplate_CreationRapportClientV2" />
+      <Variable x:TypeArguments="x:String" Name="strNumSocietePourChoixTemplateV2_Founisseur" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionClientFBL1H" />
+      <Variable x:TypeArguments="x:String" Name="str_RepertoireExtractionFournisseurFBL1H" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Init et Get asset" sap:VirtualizedContainerService.HintSize="797,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_RepertoireRoot_Suffixe_Asset" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="str_NomMain" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_NomProcess]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String" xml:space="preserve">Main_FIN_WEBFORMS_CLIENTS_FOURNISSEURS : </InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[str_NomProcess+&quot; - Debut &quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <Assign DisplayName="bollExceptionRencontreeCallProcess" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[bollExceptionRencontreeCallProcess]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[str_NomProcess+&quot; Etape get asset.&quot;]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_USER_SAP_EMSVCRPAFIN" CacheStrategy="None" DisplayName="Get Credential  str_UserSAP et pwd" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secureStr_PwdSAP]" Username="[str_UserSAP]" />
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_SAPLOGON_NOM_COMPLET_ENVIRONNEMENT" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[str_NomEnvironnementSurSapLogon_ASelectionner]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_SAVING_MINUTE_PAR_EXTRACTION" CacheStrategy="None" DisplayName="Get Asset int_SavingParExtraction" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:Int32">[int_SavingParExtraction]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_BAL_TEAM_RPA" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_4">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[str_Mail_BAL_TEAM_RPA]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_ROOT_FOLDER" CacheStrategy="None" DisplayName="Get Asset : str_RepertoireRoot_Suffixe_Asset" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[str_RepertoireRoot_Suffixe_Asset]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_URL_REP_METIER_SHAREPOINT_ONLINE" CacheStrategy="None" DisplayName="Get Asset : Lien vers RepMetier Sharepoint Online" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_5">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strLienRepMetierSurSharepointOnline]</OutArgument>
+        </ui:GetRobotAsset.Value>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_SOCIETE_POUR_CHOIX_TEMPLATE_CLIENT_V2_SeparateurVirgule" CacheStrategy="None" DisplayName="Get Asset : strNomSocietePourChoixTemplateV2" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetRobotAsset_6">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strNumSocietePourChoixTemplateV2]</OutArgument>
+        </ui:GetRobotAsset.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetRobotAsset>
+      <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="FIN_WEBFORMS_CLIENTS_FOURNISSEURS_SOCIETE_POUR_CHOIX_TEMPLATE_FOURNISSEUR_V2_SeparateurVirgule" CacheStrategy="None" DisplayName="Get Asset : strNomSocietePourChoixTemplateV2_Fournisseur" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="GetRobotAsset_7">
+        <ui:GetRobotAsset.Value>
+          <OutArgument x:TypeArguments="x:String">[strNumSocietePourChoixTemplateV2_Founisseur]</OutArgument>
+        </ui:GetRobotAsset.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetRobotAsset>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[str_NomProcess+&quot; Société.s éligible.s au template client v2 : &quot;+strNumSocietePourChoixTemplateV2]" />
+      <ui:GetEnvironmentFolder sap2010:Annotation.AnnotationText="str_RepertoireUserProfil" DisplayName="Get Environment Folder : str_UserProfil_Rep" FolderPath="[str_RepertoireUserProfil]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="UserProfile">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetEnvironmentFolder>
+      <Assign DisplayName="str_RepertoireRootCompletAvecUserProfil_Documents" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_RepertoireRootCompletAvecUserProfil_Documents]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireUserProfil, str_RepertoireRoot_Suffixe_Asset)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[str_NomProcess+&quot; Repertoire root : &quot;+str_RepertoireRootCompletAvecUserProfil_Documents]" />
+    </Sequence>
+    <Sequence sap2010:Annotation.AnnotationText="Constantes chemin des rep et fichiers nécessaire aux traitement" DisplayName="Constantes chemin des rep et fichiers nécessaire aux traitement" sap:VirtualizedContainerService.HintSize="797,123" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Les 4 fichiers paramètres" sap:VirtualizedContainerService.HintSize="304,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="str_RepertoireParametre" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireParametre]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="Paramètres.xlsx" DisplayName="str_FullPathFichierParametre" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_FullPathFichierParametre]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES","Paramètres.xlsx")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="Référentiel Emails.xlsx" DisplayName="str_FullPathFichierReferentielEmail" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_FullPathFichierReferentielEmail]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES","Référentiel Emails.xlsx")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="Template_Clients_V2Q4.xlsx" DisplayName="str_FullPathFichierTemplate_CreationRapportClientV2" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_FullPathFichierTemplate_CreationRapportClientV2]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES","Template_Clients_V2.xlsx")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="Template_Clients_V1.xlsx" DisplayName="str_FullPathFichierTemplate_CreationRapportClient" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_31">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_FullPathFichierTemplate_CreationRapportClient]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES","Template_Clients_V1.xlsx")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="WebForm_Supplier.xlsx" DisplayName="str_FullPathFichierWebform_CreationRapportSupplier" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_FullPathFichierWebform_CreationRapportSupplier]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES","WebForm_Supplier.xlsx")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+      </Sequence>
+      <Sequence DisplayName="Fichier de suivi: vacation" sap:VirtualizedContainerService.HintSize="304,66" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="str_ReferenceTrimestre_XTyyyy" />
+          <Variable x:TypeArguments="x:Boolean" Name="blOkFileExist" />
+          <Variable x:TypeArguments="x:String" Name="strTemplateFichierSuiviExecution_FullPath" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="str_ReferenceTrimestre_XTyyyy init" sap:VirtualizedContainerService.HintSize="721,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestre_XTyyyy]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="strTemplateFichierSuiviExecution_FullPath" sap:VirtualizedContainerService.HintSize="721,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strTemplateFichierSuiviExecution_FullPath]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\PARAMETRES","TemplateFichierSuiviExecution.xlsx")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CalculDateTrimestre_ExerciceComptable_RefTrimestre workflow" sap:VirtualizedContainerService.HintSize="721,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Utils\CalculDateTrimestre_ExerciceComptable_RefTrimestre.xaml">
+          <ui:InvokeWorkflowFile.Arguments>
+            <OutArgument x:TypeArguments="x:String" x:Key="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" />
+            <OutArgument x:TypeArguments="x:String" x:Key="Arg_Out_str_AnneeComptable" />
+            <OutArgument x:TypeArguments="x:String" x:Key="Arg_Out_str_ReferenceTrimestre_XTyyyy">[str_ReferenceTrimestre_XTyyyy]</OutArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="Arg_Test_IN_str_DateAuFormatddMMyyyySeparateurPoint" />
+          </ui:InvokeWorkflowFile.Arguments>
+        </ui:InvokeWorkflowFile>
+        <Assign sap2010:Annotation.AnnotationText="SuiviExecution_XTyyyy.xlsx" DisplayName="str_FullPathFichierSuiviExecution" sap:VirtualizedContainerService.HintSize="721,91" sap2010:WorkflowViewState.IdRef="Assign_10">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_FullPathFichierSuiviExecution]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents,"ROBOTS\SUIVI EXECUTIONS","SuiviExecution_"+str_ReferenceTrimestre_XTyyyy+".xlsx")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="721,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[str_NomProcess+&quot;Ref trimestre =&quot;+str_ReferenceTrimestre_XTyyyy+&quot; ==&gt; Controle existence du fichier de suivi correspondant : &quot;+str_FullPathFichierSuiviExecution]" />
+        <ui:FileExistsX DisplayName="File Exists" Exists="[blOkFileExist]" sap:VirtualizedContainerService.HintSize="721,132" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[str_FullPathFichierSuiviExecution]" />
+        <If Condition="[blOkFileExist]" DisplayName="If 1er ou relance" sap:VirtualizedContainerService.HintSize="721,862" sap2010:WorkflowViewState.IdRef="If_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If.Then>
+            <Sequence DisplayName="Relance" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[str_NomProcess+&quot; Cas relance Run du trimetre &quot;+str_ReferenceTrimestre_XTyyyy+&quot; : le fichier de suivi existe déjà ==&gt;&quot;+str_FullPathFichierSuiviExecution]" />
+            </Sequence>
+          </If.Then>
+          <If.Else>
+            <Sequence DisplayName="1ere exécution - Copier TemplateFichierSuiviExecution" sap:VirtualizedContainerService.HintSize="476,704" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[str_NomProcess+&quot; Cas 1er Run du trimetre &quot;+str_ReferenceTrimestre_XTyyyy]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[str_NomProcess+&quot; Copie du fichier template SuiviExecution : &quot;+strTemplateFichierSuiviExecution_FullPath+&quot; avec renommage vers &quot;+str_FullPathFichierSuiviExecution]" />
+              <ui:CopyFile ContinueOnError="{x:Null}" Destination="[str_FullPathFichierSuiviExecution]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[strTemplateFichierSuiviExecution_FullPath]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CopyFile>
+              <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[str_NomProcess+&quot;Succes copie du fichier template suivi exécution. &quot;]" />
+            </Sequence>
+          </If.Else>
+        </If>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="721,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[str_NomProcess+&quot;Fichier suivi d'exécution du trimestre = &quot;+str_FullPathFichierSuiviExecution]" />
+      </Sequence>
+      <Assign DisplayName="str_RepertoireMetier" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_RepertoireMetier]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "METIER")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Sequence DisplayName="Rep des EXTRACTIONS\CLIENTS" sap:VirtualizedContainerService.HintSize="304,445" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\CLIENTS\BALANCE" DisplayName="str_RepertoireExtractionClientBalance" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionClientBalance]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\CLIENTS\BALANCE")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\CLIENTS\FAGL003H" DisplayName="str_RepertoireExtractionClientFAGL003H" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionClientFAGL003H]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\CLIENTS\FAGL003H")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\CLIENTS\FBL1H" DisplayName="str_RepertoireExtractionClientFBL1H" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_32">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionClientFBL1H]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\CLIENTS\FBL1H")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+      </Sequence>
+      <Sequence DisplayName="Rep des EXTRACTIONS\CLIENTS" sap:VirtualizedContainerService.HintSize="304,445" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\FOURNISSEURS\BALANCE" DisplayName="str_RepertoireExtractionFournisseurFAGL003H" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_15">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionFournisseurBalance]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\FOURNISSEURS\BALANCE")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\FOURNISSEURS\FAGL003H" DisplayName="str_RepertoireExtractionFournisseurFAGL003H" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_16">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionFournisseurFAGL003H]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\FOURNISSEURS\FAGL003H")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\FOURNISSEURS\FBL1H" DisplayName="str_RepertoireExtractionFournisseurFBL1H" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_33">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionFournisseurFBL1H]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\FOURNISSEURS\FBL1H")]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+      </Sequence>
+      <Assign sap2010:Annotation.AnnotationText="EXTRACTIONS\LFB1" DisplayName="RepertoireExtractionLFB1" sap:VirtualizedContainerService.HintSize="304,91" sap2010:WorkflowViewState.IdRef="Assign_18">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_RepertoireExtractionLFB1]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "EXTRACTIONS\LFB1")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign sap2010:Annotation.AnnotationText="ARCHIVE" DisplayName="str_RepertoireArchive" sap:VirtualizedContainerService.HintSize="304,91" sap2010:WorkflowViewState.IdRef="Assign_19">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_RepertoireArchive]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[Path.Combine(str_RepertoireRootCompletAvecUserProfil_Documents, "ARCHIVE")]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+    </Sequence>
+    <Sequence DisplayName="Info Dest et CC mails" sap:VirtualizedContainerService.HintSize="797,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_NomOngletALire_ReferentielMail" />
+        <Variable x:TypeArguments="x:String" Name="str_NomColonneEmailsTo_ReferentielMail" />
+        <Variable x:TypeArguments="x:String" Name="str_NomColonneEmailsCC_ReferentielMail" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[str_NomProcess+&quot;Appel : Utils\RecupDataFileDestinataireEtPersoEnCopieMail.xaml &quot;]" />
+      <TryCatch DisplayName="Try Catch EXCEL" sap:VirtualizedContainerService.HintSize="379,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <TryCatch.Try>
+          <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="EXCEL" />
+        </TryCatch.Try>
+        <TryCatch.Catches>
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ActivityAction x:TypeArguments="s:Exception">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              </ActivityAction.Argument>
+            </ActivityAction>
+          </Catch>
+        </TryCatch.Catches>
+      </TryCatch>
+      <Assign DisplayName="str_NomOngletALire_ReferentielMail" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_NomOngletALire_ReferentielMail]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Référentiel</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="str_NomColonneEmailsTo_ReferentielMail" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_NomColonneEmailsTo_ReferentielMail]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Emails To</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="str_NomColonneEmailsCC_ReferentielMail" sap:VirtualizedContainerService.HintSize="379,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_NomColonneEmailsCC_ReferentielMail]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Emails CC</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke RecupDataFileDestinataireEtPersoEnCopieMail workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Utils\RecupDataFileDestinataireEtPersoEnCopieMail.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichier_RéférentielEmails">[str_FullPathFichierReferentielEmail]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomOngletALire">[str_NomOngletALire_ReferentielMail]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomColonneEmailsTo">[str_NomColonneEmailsTo_ReferentielMail]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomColonneEmailsCC">[str_NomColonneEmailsCC_ReferentielMail]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="Arg_OUT_str_EmailsCC_SeparateurPointVirguleSiPlusDUn">[str_EmailsCC_SeparateurPointVirguleSiPlusDUn]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="Arg_OUT_str_EmailsTo_SeparateurPointVirguleSiPlusDUn">[str_EmailsTo_SeparateurPointVirguleSiPlusDUn]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[str_NomProcess+&quot;Fin appel : Utils\RecupDataFileDestinataireEtPersoEnCopieMail.xaml &quot;]" />
+    </Sequence>
+    <TryCatch DisplayName="Try Catch Call ProcessKey" sap:VirtualizedContainerService.HintSize="797,693" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="Appel key process" sap:VirtualizedContainerService.HintSize="421,466" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[str_NomProcess+&quot;Appel : Process_WEBFORMS_CLIENTS_FOURNISSEURS.xaml&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process_WEBFORMS_CLIENTS_FOURNISSEURS workflow" sap:VirtualizedContainerService.HintSize="379,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="KeyProcess\Process_WEBFORMS_CLIENTS_FOURNISSEURS.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichierParametre">[str_FullPathFichierParametre]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichierSuivi">[str_FullPathFichierSuiviExecution]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_Usernane">[str_UserSAP]</InArgument>
+              <InArgument x:TypeArguments="ss:SecureString" x:Key="Arg_IN_SecureStr_Pwd">[secureStr_PwdSAP]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_NomEnvironnementSurSapLogon_ASelectionner">[str_NomEnvironnementSurSapLogon_ASelectionner]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_MailDestinataire">[str_EmailsTo_SeparateurPointVirguleSiPlusDUn]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_MailCC">[str_EmailsCC_SeparateurPointVirguleSiPlusDUn]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_Mail_BAL_TEAM_RPA">[str_Mail_BAL_TEAM_RPA]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichierReferentielEmail">[str_FullPathFichierReferentielEmail]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichierTemplate_CreationRapportClient">[str_FullPathFichierTemplate_CreationRapportClient]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichierWebform_CreationRapportSupplier">[str_FullPathFichierWebform_CreationRapportSupplier]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireMetier">[str_RepertoireMetier]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireExtractionClientBalance">[str_RepertoireExtractionClientBalance]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireExtractionClientFAGL003H">[str_RepertoireExtractionClientFAGL003H]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireExtractionFournisseurBalance">[str_RepertoireExtractionFournisseurBalance]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireExtractionFournisseurFAGL003H">[str_RepertoireExtractionFournisseurFAGL003H]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireExtractionLFB1">[str_RepertoireExtractionLFB1]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireArchive">[str_RepertoireArchive]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="Arg_IN_int_SAVING_MINUTE_PAR_EXTRACTION">[int_SavingParExtraction]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireParametre">[str_RepertoireParametre]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_URL_RepMetierSurSharepointOnline">[strLienRepMetierSurSharepointOnline]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_FullPathFichierTemplate_CreationRapportClientV2">[str_FullPathFichierTemplate_CreationRapportClientV2]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_strNumSocietePourChoixTemplateV2_SeparateurVirgule">[strNumSocietePourChoixTemplateV2]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_strNumSocietePourChoixTemplateV2_Fournisseur_SeparateurVirgule">[strNumSocietePourChoixTemplateV2_Founisseur]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_RepertoireExtractionFournisseurFBL1H">[str_RepertoireExtractionClientFBL1H]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[str_NomProcess+&quot;Fin appel : Process_WEBFORMS_CLIENTS_FOURNISSEURS.xaml&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="425,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception call Main_FIN_WEBFORMS_CLIENTS_FOURNISSEURS" sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[str_NomProcess+&quot;Exception rencontrée. Detail : &quot;+exception.ToString]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <Assign DisplayName="str_MotifException" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_MotifException]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[exception.ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="bollExceptionRencontreeCallProcess" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[bollExceptionRencontreeCallProcess]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <If Condition="[bollExceptionRencontreeCallProcess]" DisplayName="If Controle sendMail exception + Throw" sap:VirtualizedContainerService.HintSize="797,973" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="SendMail et Throw pour Orchestrator" sap:VirtualizedContainerService.HintSize="376,815" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="str_MailBody" />
+            <Variable x:TypeArguments="x:String" Name="str_MailObjet" />
+            <Variable x:TypeArguments="x:String" Name="str_MailPJ" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Warn" Message="[str_NomProcess+&quot;Terminé avec exception : &quot;+str_MotifException]" />
+          <Assign DisplayName="str_MailObjet" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_MailObjet]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["Robot WEBFORMS CLIENT FOURNISSEURS &gt;Exception rencontrée "]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_MailBody" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_MailBody]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[CONST_HTML_START + "&lt;p&gt;Bonjour,&lt;/p&gt;&lt;p&gt;Le robot de Webforms Clients/Fournisseurs des FNP a rencontré une erreur. Merci de regarder le problème et relancer le robot.&lt;/p&gt;&lt;p&gt;Fin du processus&lt;/p&gt;&lt;br&gt;&lt;/br&gt;&lt;p&gt; Détail: &lt;ul&gt;&lt;li&gt; "+str_MotifException+"&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;&lt;br&gt;&lt;/br&gt;&lt;p&gt;Bien cordialement&lt;/p&gt;&lt;p&gt;Ceci est un message automatiquement envoyé par un robot. Merci de ne pas y répondre.&lt;/p&gt;"+CONST_HTML_END]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendMail workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Utils\SendMail.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_PersonneEnCopieDuMail" />
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_DestinataireMail">[str_Mail_BAL_TEAM_RPA]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_ObjetDuMail">[str_MailObjet]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_CorpsMail">[str_MailBody]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="Arg_IN_str_PieceJointe" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_NomProcess+&quot;Fin&quot;]" />
+          <Throw sap2010:Annotation.AnnotationText="Le robot de Webforms Clients/Fournisseurs des FNP a rencontré une erreur. Merci de regarder le problème et relancer le robot." DisplayName="Throw All exceptions " Exception="[New ApplicationException(&quot;Le robot de Webforms Clients/Fournisseurs des FNP a rencontré une erreur. Merci de regarder le problème et relancer le robot. Ci-dessous le détail de l'exception:&quot;+chr(10)+str_MotifException)]" sap:VirtualizedContainerService.HintSize="334,109" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Pas d'exception" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[str_NomProcess+&quot;Fin&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

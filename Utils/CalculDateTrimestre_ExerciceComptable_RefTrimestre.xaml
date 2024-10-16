@@ -1,0 +1,1379 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CalculDateTrimestre_ExerciceComptable_RefTrimestre" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" Type="OutArgument(x:String)" />
+    <x:Property Name="Arg_Out_str_AnneeComptable" Type="OutArgument(x:String)" />
+    <x:Property Name="Arg_Out_str_ReferenceTrimestre_XTyyyy" Type="OutArgument(x:String)" />
+    <x:Property Name="Arg_Test_IN_str_DateAuFormatddMMyyyySeparateurPoint" Type="InArgument(x:String)" />
+    <x:Property Name="Arg_Out_str_ReferenceTrimestre_QXyyyy" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>951,5317</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CalculDateTrimestre_ExerciceComptable_RefTrimestre_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Core.Activities.DateModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="CalculDateTrimestre_ExerciceComptable_RefTrimestre" sap:VirtualizedContainerService.HintSize="580,5252" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_DateDuJour" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre1Debut" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre1Fin" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre2Debut" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre2Fin" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre3Debut" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre3Fin" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre4Debut" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_Trimestre4Fin" />
+      <Variable x:TypeArguments="x:Int32" Name="int_AnneeEnCours" />
+      <Variable x:TypeArguments="x:Int32" Name="Int_AnneePrecedente" />
+      <Variable x:TypeArguments="s:DateTime" Name="dTime_T1_ddMMyyyy" />
+      <Variable x:TypeArguments="x:String" Name="str_AnneeExerciceComptable" />
+      <Variable x:TypeArguments="x:String" Name="str_ReferenceTrimestre" />
+      <Variable x:TypeArguments="x:String" Name="str_CultureName" />
+      <Variable x:TypeArguments="x:String" Name="str_TrimestreDeduit_TX" />
+      <Variable x:TypeArguments="x:String" Name="str_CaseQX" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="538,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:DateTime">[dTime_DateDuJour]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:DateTime">[Date.Now()]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Test " sap:VirtualizedContainerService.HintSize="538,60" sap2010:WorkflowViewState.IdRef="Assign_66">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:DateTime">[dTime_DateDuJour]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact("01.03.2024","dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_40">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Test " sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:DateTime">[dTime_DateDuJour]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(Arg_Test_IN_str_DateAuFormatddMMyyyySeparateurPoint,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Sequence DisplayName="Int arg" sap:VirtualizedContainerService.HintSize="538,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_54">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Arg_Out_str_AnneeComptable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_55">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[Arg_Out_str_AnneeComptable]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="AssiArg_Out_str_ReferenceTrimestre_XTyyyygn" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_56">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_XTyyyy]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_102">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <Assign DisplayName="str_CultureName" sap:VirtualizedContainerService.HintSize="538,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[str_CultureName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">FR-fr</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Avec culture info fr-FR. Return =&quot;+dTime_DateDuJour.ToString(System.Globalization.CultureInfo.GetCultureInfo(str_CultureName))]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Avec culture info fr-FR. Return =&quot;+dTime_DateDuJour.ToString(System.Globalization.CultureInfo.GetCultureInfo(&quot;FR-fr&quot;))]" />
+    <Assign sap:VirtualizedContainerService.HintSize="538,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[int_AnneeEnCours]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[dTime_DateDuJour.Year]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="538,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[Int_AnneePrecedente]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[dTime_DateDuJour.Year -1]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;int_AnneeEnCours= &quot;+int_AnneeEnCours.ToString]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Int_AnneePrecedente = &quot;+Int_AnneePrecedente.ToString]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <Sequence DisplayName="Def Trimestre" sap:VirtualizedContainerService.HintSize="538,2048" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_T1Debut_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T1Fin_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T2Debut_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T2Fin_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T3Debut_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T3Fin_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T4Debut_JourPointMoisPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_T4Fin_JourPointMoisPoint" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Def jour.mois du deb et fin des trimestres" sap:VirtualizedContainerService.HintSize="334,852" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="str_T1Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T1Debut_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">01.04.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T1Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T1Fin_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">30.06.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T2Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T2Debut_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">01.07.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T2Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T2Fin_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">30.09.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T3Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T3Debut_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">01.10.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T3Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T3Fin_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">31.12.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T4Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T4Debut_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">01.01.</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="str_T4Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[str_T4Fin_JourPointMoisPoint]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">31.03.</InArgument>
+          </Assign.Value>
+        </Assign>
+      </Sequence>
+      <Assign sap2010:Annotation.AnnotationText="DateValue(&quot;01.04.&quot;+Int_AnneePrecedente.ToString)" DisplayName="dTime_Trimestre1Debut" sap:VirtualizedContainerService.HintSize="334,102" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre1Debut]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T1Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre1Fin" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre1Fin]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T1Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre2Debut" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre2Debut]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T2Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre2Fin" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre2Fin]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T2Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre3Debut" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre3Debut]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T3Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre3Fin" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre3Fin]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T3Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre4Debut" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre4Debut]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T4Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="dTime_Trimestre4Fin" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:DateTime">[dTime_Trimestre4Fin]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_T4Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;dTime_Trimestre1Debut au format dd.MM.yyyy = &quot;+dTime_Trimestre1Debut.ToString(&quot;dd.MM.yyyy&quot;)]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;dTime_Trimestre1Fin au format dd.MM.yyyy = &quot;+dTime_Trimestre1Fin.ToString(&quot;dd.MM.yyyy&quot;)]" />
+    </Sequence>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Avec culture info, dTime_Trimestre1Debut : &quot;+dTime_Trimestre1Debut.ToString(System.Globalization.CultureInfo.GetCultureInfo(str_CultureName))]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Avec culture info,dTime_Trimestre1Fin : &quot;+dTime_Trimestre1Fin.ToString(System.Globalization.CultureInfo.GetCultureInfo(str_CultureName))]" />
+    <If Condition="[dTime_DateDuJour &gt;= dTime_Trimestre1Debut AND dTime_DateDuJour &lt;= dTime_Trimestre1Fin]" DisplayName="If T1" sap:VirtualizedContainerService.HintSize="538,253" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="1TYYYY" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_TrimestreDeduit_TX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">T1</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_ReferenceTrimestre" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestre]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["1T"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Cas T1 str_ReferenceTrimestre = &quot;+str_ReferenceTrimestre]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[dTime_DateDuJour &gt;= dTime_Trimestre2Debut AND dTime_DateDuJour &lt;= dTime_Trimestre2Fin]" DisplayName="If T2" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="1TYYYY" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_TrimestreDeduit_TX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_24">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">T2</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_ReferenceTrimestre" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_25">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestre]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["2T"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot; Cas 2 str_ReferenceTrimestre = &quot;+str_ReferenceTrimestre]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[dTime_DateDuJour &gt;= dTime_Trimestre3Debut AND dTime_DateDuJour &lt;= dTime_Trimestre3Fin]" DisplayName="If T3" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="1TYYYY" sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_TrimestreDeduit_TX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">T3</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_ReferenceTrimestre" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestre]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["3T"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot; Cas T3 str_ReferenceTrimestre = &quot;+str_ReferenceTrimestre]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[dTime_DateDuJour &gt;= dTime_Trimestre4Debut AND dTime_DateDuJour &lt;= dTime_Trimestre4Fin]" DisplayName="If T4" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="If_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="1TYYYY" sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_TrimestreDeduit_TX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">T4</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_ReferenceTrimestre" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestre]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["4T"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot; Cas T4 str_ReferenceTrimestre = &quot;+str_ReferenceTrimestre]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Sequence sap2010:Annotation.AnnotationText="Arg_Out_str_AnneeComptable&#xA;Arg_Out_str_ReferenceTrimestre_XTyyyy" DisplayName="Deduction T" sap:VirtualizedContainerService.HintSize="538,881" sap2010:WorkflowViewState.IdRef="Sequence_16">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="str_JJMM_SeparateurPoint" />
+        <Variable x:TypeArguments="x:String" Name="str_CaseXT" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="496,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="496,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_CaseXT]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="496,60" sap2010:WorkflowViewState.IdRef="Assign_57">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[str_TrimestreDeduit_TX]" sap:VirtualizedContainerService.HintSize="496,316" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Sequence x:Key="T1" DisplayName="T1 == &gt;Q2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">31.03.</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseXT]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">1T</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_AnneeComptable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_32">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_AnneeComptable]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="AssiArg_Out_str_ReferenceTrimestre_XTyyyygn" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_33">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_XTyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseXT+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_CaseQX" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_103">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Q2</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_104">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Log out" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint = &quot;+Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Arg_Out_str_ReferenceTrimestre_XTyyyy = &quot;+Arg_Out_str_ReferenceTrimestre_XTyyyy]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Arg_Out_str_AnneeComptable = &quot;+Arg_Out_str_AnneeComptable]" />
+          </Sequence>
+        </Sequence>
+        <Sequence x:Key="T2" DisplayName="T2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_35">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">30.06.</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseXT]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">2T</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_AnneeComptable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_AnneeComptable]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="AssiArg_Out_str_ReferenceTrimestre_XTyyyygn" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_XTyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseXT+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_CaseQX" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_105">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Q3</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_106">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Log out" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint = &quot;+Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot;Arg_Out_str_ReferenceTrimestre_XTyyyy = &quot;+Arg_Out_str_ReferenceTrimestre_XTyyyy]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="Info" Message="[&quot;Arg_Out_str_AnneeComptable = &quot;+Arg_Out_str_AnneeComptable]" />
+          </Sequence>
+        </Sequence>
+        <Sequence x:Key="T3" DisplayName="T3 =&gt; Q4 servier" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">30.09.</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseXT]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">3T</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_AnneeComptable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_47">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_AnneeComptable]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="AssiArg_Out_str_ReferenceTrimestre_XTyyyygn" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_48">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_XTyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseXT+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_CaseQX" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_107">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Q4</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_108">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Log out" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint = &quot;+Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Arg_Out_str_ReferenceTrimestre_XTyyyy = &quot;+Arg_Out_str_ReferenceTrimestre_XTyyyy]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="Info" Message="[&quot;Arg_Out_str_AnneeComptable = &quot;+Arg_Out_str_AnneeComptable]" />
+          </Sequence>
+        </Sequence>
+        <Sequence x:Key="T4" DisplayName="T4" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">31.12.</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_JJMM_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_50">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseXT]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">4T</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_51">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_JJMM_SeparateurPoint+Int_AnneePrecedente.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_AnneeComptable" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_52">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_AnneeComptable]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Int_AnneePrecedente.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="str_CaseQX" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_109">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">Q1</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_110">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="AssiArg_Out_str_ReferenceTrimestre_XTyyyygn" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_53">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_XTyyyy]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[str_CaseXT+Int_AnneePrecedente.ToString]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Sequence DisplayName="Log out" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_26">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="Info" Message="[&quot;Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint = &quot;+Arg_Out_str_DateTrimestreddMMyyyy_SeparateurPoint]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="Info" Message="[&quot;Arg_Out_str_ReferenceTrimestre_XTyyyy = &quot;+Arg_Out_str_ReferenceTrimestre_XTyyyy]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;Arg_Out_str_AnneeComptable = &quot;+Arg_Out_str_AnneeComptable]" />
+          </Sequence>
+        </Sequence>
+      </Switch>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,91" sap2010:WorkflowViewState.IdRef="LogMessage_35" Level="Info" Message="[&quot;********************************************************&quot;]" />
+    </Sequence>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="538,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="688,3598" sap2010:WorkflowViewState.IdRef="Sequence_39">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap2010:Annotation.AnnotationText="Qx" DisplayName="DeductionQ : Def Intervale TrQ et calcul Qx" sap:VirtualizedContainerService.HintSize="219,97" sap2010:WorkflowViewState.IdRef="Sequence_37">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="str_Q1Debut_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q1Fin_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q2Debut_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q2Fin_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q3Debut_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q3Fin_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q4Debut_JourPointMoisPoint" />
+              <Variable x:TypeArguments="x:String" Name="str_Q4Fin_JourPointMoisPoint" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ1Debut" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ1Fin" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ2Fin" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ3Debut" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ4Debut" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ4Fin" />
+              <Variable x:TypeArguments="x:String" Name="str_TrimestreDeduit_TrQX" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ2Debut" />
+              <Variable x:TypeArguments="x:String" Name="str_ReferenceTrimestreQ" />
+              <Variable x:TypeArguments="s:DateTime" Name="dTime_TrQ3Fin" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence DisplayName="Def jour.mois du deb et fin des trimestres Q" sap:VirtualizedContainerService.HintSize="604,66" sap2010:WorkflowViewState.IdRef="Sequence_27">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign DisplayName="str_Q1Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_67">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q1Debut_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">01.10.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_Q1Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_68">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q1Fin_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">31.12.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_T2Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_69">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q2Debut_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">01.01.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_Q2Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_70">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q2Fin_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">31.03.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_Q3Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_71">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q3Debut_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">01.04.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_Q3Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_72">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q3Fin_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">30.06.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_Q4Debut_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_73">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q4Debut_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">01.07.</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign DisplayName="str_Q4Fin_JourPointMoisPoint" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_74">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[str_Q4Fin_JourPointMoisPoint]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">30.09.</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+            <Assign sap2010:Annotation.AnnotationText="DateValue(&quot;01.04.&quot;+Int_AnneePrecedente.ToString)" DisplayName="dTime_TrQ1Debut" sap:VirtualizedContainerService.HintSize="604,102" sap2010:WorkflowViewState.IdRef="Assign_75">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ1Debut]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q1Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ1Fin" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_76">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ1Fin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q1Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ2Debut" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_77">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ2Debut]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q2Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ2Fin" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_78">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ2Fin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q2Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ3Debut" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_79">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ3Debut]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q3Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ3Fin" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_80">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ3Fin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q3Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ4Debut" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_81">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ4Debut]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q4Debut_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="dTime_TrQ4Fin" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="Assign_82">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[dTime_TrQ4Fin]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.ParseExact(str_Q4Fin_JourPointMoisPoint+int_AnneeEnCours.ToString,"dd.MM.yyyy",system.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="604,2434" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="568,2356" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Calcul Qx" sap:VirtualizedContainerService.HintSize="526,2264" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[dTime_DateDuJour &gt;= dTime_TrQ1Debut AND dTime_DateDuJour &lt;= dTime_TrQ1Fin]" DisplayName="If Q1" sap:VirtualizedContainerService.HintSize="484,900" sap2010:WorkflowViewState.IdRef="If_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Q1YYYY" sap:VirtualizedContainerService.HintSize="376,714" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="str_TrimestreDeduit_Qx" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_83">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TrQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q1</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_91">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q1</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="str_ReferenceTrimestreQ" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_84">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestreQ]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_92">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;Cas Q1 : Intervale date dd.MM = &quot;+str_Q1Debut_JourPointMoisPoint+ &quot; à &quot;+str_Q1Fin_JourPointMoisPoint]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Cas Q1 str_ReferenceTrimestreQ = &quot;+str_ReferenceTrimestreQ]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[dTime_DateDuJour &gt;= dTime_TrQ2Debut AND dTime_DateDuJour &lt;= dTime_TrQ2Fin]" DisplayName="If Q2" sap:VirtualizedContainerService.HintSize="484,253" sap2010:WorkflowViewState.IdRef="If_6">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Q2YYYY" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="str_TrimestreDeduit_TrQX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_85">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TrQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q2</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_93">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q2</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="str_ReferenceTrimestreQ" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_94">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestreQ]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_95">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="Info" Message="[&quot;Cas Q2 : Intervale date dd.MM = &quot;+str_Q2Debut_JourPointMoisPoint+ &quot; à &quot;+str_Q2Fin_JourPointMoisPoint]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot; Cas Q2 str_ReferenceTrimestreQ = &quot;+str_ReferenceTrimestreQ]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[dTime_DateDuJour &gt;= dTime_TrQ3Debut AND dTime_DateDuJour &lt;= dTime_TrQ3Fin]" DisplayName="If Q3" sap:VirtualizedContainerService.HintSize="484,253" sap2010:WorkflowViewState.IdRef="If_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Q3YYYY" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="str_TrimestreDeduit_TrQX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_87">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TrQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q3</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_96">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q3</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="str_ReferenceTrimestreQ" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_97">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestreQ]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_98">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="Info" Message="[&quot;Cas Q3 : Intervale date dd.MM = &quot;+str_Q3Debut_JourPointMoisPoint+ &quot; à &quot;+str_Q3Fin_JourPointMoisPoint]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot; Cas Q3 str_ReferenceTrimestreQ = &quot;+str_ReferenceTrimestreQ]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <If Condition="[dTime_DateDuJour &gt;= dTime_TrQ4Debut AND dTime_DateDuJour &lt;= dTime_TrQ4Fin]" DisplayName="If Q4" sap:VirtualizedContainerService.HintSize="484,253" sap2010:WorkflowViewState.IdRef="If_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence DisplayName="Q4YYYY" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="str_TrimestreDeduit_TrQX" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_89">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_TrimestreDeduit_TrQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["Q4"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_99">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_CaseQX]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">Q4</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="str_ReferenceTrimestreQ" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_100">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[str_ReferenceTrimestreQ]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign DisplayName="Arg_Out_str_ReferenceTrimestre_QXyyyy" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_101">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[Arg_Out_str_ReferenceTrimestre_QXyyyy]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[str_CaseQX+"_"+int_AnneeEnCours.ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Cas Q4 : Intervale date dd.MM = &quot;+str_Q4Debut_JourPointMoisPoint+ &quot; à &quot;+str_Q4Fin_JourPointMoisPoint]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot; Cas Q4 str_ReferenceTrimestreQ = &quot;+str_ReferenceTrimestreQ]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="242,83" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;*************************************************************&quot;]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;str_TrimestreDeduit_TrQX = &quot;+str_TrimestreDeduit_TrQX]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;*************************************************************&quot;]" />
+                  </Sequence>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="538,91" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Arg_Out_str_ReferenceTrimestre_QXyyyy = &quot;+Arg_Out_str_ReferenceTrimestre_QXyyyy.ToString]" />
+  </Sequence>
+</Activity>
