@@ -1,5 +1,5 @@
 {
-  "name": "FIN_WEBFORMS_CLIENTS_FOURNISSEURS",
+  "name": "FIN_WEBFORMS_CLIENTS_FOURNISSEURS_V2",
   "description": "Extraction des balances âgées fournisseurs et clients, et de deux rapports HFM. ",
   "main": "Main_FIN_WEBFORMS_CLIENTS_FOURNISSEURS.xaml",
   "dependencies": {
@@ -14,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "21.10.5.0",
-  "projectVersion": "1.0.25",
+  "projectVersion": "1.0.1",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,

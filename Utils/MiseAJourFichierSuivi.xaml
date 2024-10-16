@@ -21,7 +21,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>778,3651</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>951,7446</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MiseAJourFichierSuivi_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -100,10 +100,9 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MiseAJourFichierSuivi" sap:VirtualizedContainerService.HintSize="646,3698" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MiseAJourFichierSuivi" sap:VirtualizedContainerService.HintSize="646,7381" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_Case_TransactionEspaceVariante" />
       <Variable x:TypeArguments="x:String" Name="str_FullPathFichierSuivi" />
@@ -129,14 +128,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Delay DisplayName=" Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="604,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-    <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="604,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Init" sap:VirtualizedContainerService.HintSize="604,1306" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="boolSiTrueFaireMiseAJour_RapportFournisseur" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_31">
+      <Assign DisplayName="boolSiTrueFaireMiseAJour_RapportFournisseur" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_31">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[boolSiTrueFaireMiseAJour_RapportFournisseur]</OutArgument>
         </Assign.To>
@@ -144,7 +143,7 @@
           <InArgument x:TypeArguments="x:Boolean">[Arg_IN_boolSiTrueFaireMiseAJour_RapportFournisseur]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="boolSiTrueFaireMiseAJour_RapportClient" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+      <Assign DisplayName="boolSiTrueFaireMiseAJour_RapportClient" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_34">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[boolSiTrueFaireMiseAJour_RapportClient]</OutArgument>
         </Assign.To>
@@ -152,7 +151,7 @@
           <InArgument x:TypeArguments="x:Boolean">[Arg_IN_boolSiTrueFaireMiseAJour_RapportClient]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="str_FullPathFichierSuivi" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+      <Assign DisplayName="str_FullPathFichierSuivi" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_28">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_FullPathFichierSuivi]</OutArgument>
         </Assign.To>
@@ -160,7 +159,7 @@
           <InArgument x:TypeArguments="x:String">[Trim(Arg_IN_str_FullPathFichierSuivi)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="str_WorkSheetALire" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+      <Assign DisplayName="str_WorkSheetALire" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_29">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_WorkSheetALire]</OutArgument>
         </Assign.To>
@@ -168,7 +167,7 @@
           <InArgument x:TypeArguments="x:String">[Trim(Arg_IN_str_WorkSheetALire)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap2010:Annotation.AnnotationText="Trimestre en remplacement de &quot;.&quot; par /" DisplayName="str_NomSociete" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_30">
+      <Assign sap2010:Annotation.AnnotationText="Trimestre en remplacement de &quot;.&quot; par /" DisplayName="str_NomSociete" sap:VirtualizedContainerService.HintSize="304,91" sap2010:WorkflowViewState.IdRef="Assign_30">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_NomSociete]</OutArgument>
         </Assign.To>
@@ -181,7 +180,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign sap2010:Annotation.AnnotationText="Trimestre en remplacement de &quot;.&quot; par /" DisplayName="str_Trimestre" sap:VirtualizedContainerService.HintSize="262,91" sap2010:WorkflowViewState.IdRef="Assign_27">
+      <Assign sap2010:Annotation.AnnotationText="Trimestre en remplacement de &quot;.&quot; par /" DisplayName="str_Trimestre" sap:VirtualizedContainerService.HintSize="304,91" sap2010:WorkflowViewState.IdRef="Assign_27">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_Trimestre]</OutArgument>
         </Assign.To>
@@ -194,7 +193,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign DisplayName="str_SAP_Transaction" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign DisplayName="str_SAP_Transaction" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_12">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_SAP_Transaction]</OutArgument>
         </Assign.To>
@@ -202,7 +201,7 @@
           <InArgument x:TypeArguments="x:String">[If(Not String.IsNullOrEmpty(Trim(Arg_IN_str_SAP_Transaction)) Or Not String.IsNullOrEmpty(Trim(Arg_IN_str_SAP_Transaction)), Trim(Arg_IN_str_SAP_Transaction.ToUpper), String.Empty)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="str_SAP_Variante" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign DisplayName="str_SAP_Variante" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_13">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_SAP_Variante]</OutArgument>
         </Assign.To>
@@ -210,7 +209,7 @@
           <InArgument x:TypeArguments="x:String">[If(Not String.IsNullOrEmpty(Trim(Arg_IN_str_SAP_Variante)) Or Not String.IsNullOrEmpty(Trim(Arg_IN_str_SAP_Variante)), Trim(Arg_IN_str_SAP_Variante.ToUpper), String.Empty)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="str_Statut_OKouKO" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+      <Assign DisplayName="str_Statut_OKouKO" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_26">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_Statut_OKouKO]</OutArgument>
         </Assign.To>
@@ -218,10 +217,10 @@
           <InArgument x:TypeArguments="x:String">[If(Not String.IsNullOrEmpty(Trim(Arg_IN_str_Statut_OKouKO)) Or Not String.IsNullOrEmpty(Trim(Arg_IN_str_Statut_OKouKO)), Trim(Arg_IN_str_Statut_OKouKO.ToUpper), String.Empty)]</InArgument>
         </Assign.Value>
       </Assign>
-      <Sequence DisplayName="Replace caractère /" sap:VirtualizedContainerService.HintSize="262,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
+      <Sequence DisplayName="Replace caractère /" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_22">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -234,7 +233,7 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <Assign DisplayName="str_SeparateurTiret_EntreTransactionEtVariante" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign DisplayName="str_SeparateurTiret_EntreTransactionEtVariante" sap:VirtualizedContainerService.HintSize="304,60" sap2010:WorkflowViewState.IdRef="Assign_21">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[str_SeparateurTiret_EntreTransactionEtVariante]</OutArgument>
         </Assign.To>
@@ -243,7 +242,7 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Sequence DisplayName="SAP : Case transaction variante" sap:VirtualizedContainerService.HintSize="604,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
+    <Sequence DisplayName="SAP : Case transaction variante" sap:VirtualizedContainerService.HintSize="604,2621" sap2010:WorkflowViewState.IdRef="Sequence_21">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_CaseBalanceAgeeClient" />
         <Variable x:TypeArguments="x:String" Name="str_CaseBalanceAgeeFournisseur" />
@@ -252,7 +251,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -325,7 +324,7 @@
           <InArgument x:TypeArguments="x:String">[str_SAP_Transaction+str_SeparateurTiret_EntreTransactionEtVariante+str_SAP_Variante]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:IfElseIf DisplayName="Else If  Deduction Cell à modifier" sap:VirtualizedContainerService.HintSize="451,1534" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+      <ui:IfElseIf DisplayName="Else If  Deduction Cell à modifier" sap:VirtualizedContainerService.HintSize="451,1706" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
         <ui:IfElseIf.ConditionBlocks>
           <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
             <ui:IfElseIfBlock BlockType="If" Condition="[str_Case_TransactionEspaceVariante = str_CaseBalanceAgeeClient]">
@@ -350,10 +349,10 @@
             </ui:IfElseIfBlock>
             <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_Case_TransactionEspaceVariante = str_CaseBalanceAgeeFournisseur]">
               <ui:IfElseIfBlock.Then>
-                <Sequence DisplayName="Body BalanceAgeeFournisseur" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                <Sequence DisplayName="Body BalanceAgeeFournisseur" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_29">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -408,10 +407,10 @@
             </ui:IfElseIfBlock>
             <ui:IfElseIfBlock BlockType="ElseIf" Condition="[str_Case_TransactionEspaceVariante = str_CaseBalanceAgeeFournisseur1]">
               <ui:IfElseIfBlock.Then>
-                <Sequence DisplayName="Body BalanceAgeeFournisseur" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                <Sequence DisplayName="Body BalanceAgeeFournisseur" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_80">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -440,7 +439,7 @@
                       <OutArgument x:TypeArguments="x:String">[str_LettreCell_Statut_OKouKO]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">I</InArgument>
+                      <InArgument x:TypeArguments="x:String">K</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
@@ -456,7 +455,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:IfElseIf>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="File &#xA;str_WorkSheetALire" DisplayName="Etape Excel" sap:VirtualizedContainerService.HintSize="604,3332" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <Sequence sap2010:Annotation.AnnotationText="File &#xA;str_WorkSheetALire" DisplayName="Etape Excel" sap:VirtualizedContainerService.HintSize="604,3220" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="int_NumeroLigneTrouveeAvecSocieteSouhaitee_CasMAj" />
       </Sequence.Variables>
@@ -635,7 +634,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <Switch x:TypeArguments="x:String" DisplayName="5. Switch - Cas SAP" Expression="[str_Case_TransactionEspaceVariante]" sap:VirtualizedContainerService.HintSize="562,360" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+      <Switch x:TypeArguments="x:String" DisplayName="5. Switch - Cas SAP" Expression="[str_Case_TransactionEspaceVariante]" sap:VirtualizedContainerService.HintSize="562,248" sap2010:WorkflowViewState.IdRef="Switch`1_2">
         <Switch.Default>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Pas d'ajout ou màj  pour les colonnes des cas SAP&quot;]" />
         </Switch.Default>
@@ -1269,7 +1268,7 @@
             </If.Else>
           </If>
         </Sequence>
-        <Sequence x:Key="RFKOPR10-BAL AGEE FRS1 - 401*" DisplayName="Balance Agée Fournisseur" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_87">
+        <Sequence x:Key="RFKOPR10-BAL AGEE FRS1 - 401*" DisplayName="Balance Agée Fournisseur" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_87">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1425,7 +1424,7 @@
             </If.Else>
           </If>
         </Sequence>
-        <Sequence x:Key="FBL1H-WEBFORM FRNS V2" DisplayName="FBL1H Fournisseur" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_93">
+        <Sequence x:Key="FBL1H-WEBFORM FRNS V2" DisplayName="FBL1H Fournisseur" sap:VirtualizedContainerService.HintSize="881,66" sap2010:WorkflowViewState.IdRef="Sequence_93">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1664,7 +1663,7 @@
                       <OutArgument x:TypeArguments="x:String">[str_LettreCell_Statut_OKouKO]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">J</InArgument>
+                      <InArgument x:TypeArguments="x:String">I</InArgument>
                     </Assign.Value>
                   </Assign>
                   <ui:WriteCell sap2010:Annotation.AnnotationText="str_LettreCell_Statut_OKouKO+int_countDtPlus2_AddSociete.ToString" Cell="[str_LettreCell_Statut_OKouKO+int_NumeroLigneTrouveeAvecSocieteSouhaitee_CasMAj.ToString]" DisplayName="Write Cell str_LettreCell_Statut_OKouKO" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="WriteCell_36" SheetName="[str_WorkSheetALire]" Text="[str_Statut_OKouKO]" WorkbookPath="[str_FullPathFichierSuivi]">
@@ -1778,7 +1777,7 @@
                       <OutArgument x:TypeArguments="x:String">[str_LettreCell_Statut_OKouKO]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">K</InArgument>
+                      <InArgument x:TypeArguments="x:String">J</InArgument>
                     </Assign.Value>
                   </Assign>
                   <ui:WriteCell sap2010:Annotation.AnnotationText="str_LettreCell_Statut_OKouKO+int_countDtPlus2_AddSociete.ToString" Cell="[str_LettreCell_Statut_OKouKO+int_NumeroLigneTrouveeAvecSocieteSouhaitee_CasMAj.ToString]" DisplayName="Write Cell str_LettreCell_Statut_OKouKO" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="WriteCell_37" SheetName="[str_WorkSheetALire]" Text="[str_Statut_OKouKO]" WorkbookPath="[str_FullPathFichierSuivi]">
